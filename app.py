@@ -1250,12 +1250,20 @@ the same energy as appliances used for short time periods at high wattage (power
                             tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
                             tarfr= float(tarfr)  
                             appeach=spatial[selected_columns]*tarfr
-                            appeach=appeach.round(2)
                             
-                            st.write(appeach)
+                            cnt=spatial[selected_columns].value_counts()
+                            
+
+                            each_app=pd.DataFrame({'counts': cnt,'Tariff calculated': appeach})
+                            each_app.reset_index(inplace = True)
+                            each_app.rename(columns={'index':'Appliances'},inplace=True)
+                            
+                            st.dataframe(each_app)
                             
                             
-                            st.write("**Tariff Calculated Based on Energy Usages for  [{}]**".format(appeach))
+                            
+                            
+                            st.write("**Tariff Calculated Based on Energy Usages for  [{}]**".format(each_app))
                             
                             
         
