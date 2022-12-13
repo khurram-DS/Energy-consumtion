@@ -875,7 +875,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             cd['#3 What is the capacity?']=(cd[2].str.split('/').str[1])
             cd['#3 What is the capacity?']=(cd['#3 What is the capacity?'].str.split(':').str[1])
-            cd['#3 What is the capacity?']=(cd['#3 What is the capacity?'].str.split(':').str[1])
+            cd['#3 What is the capacity?']=(cd['#3 What is the capacity?'].str.split(expand=True))
             import re
             cd['Clothes dryer - The estimated Watts consumed per day'] =pd.to_numeric(cd[4].str.replace('[^\d.]', ''), errors='coerce')
             
