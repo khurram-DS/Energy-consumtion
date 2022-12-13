@@ -1251,7 +1251,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             tarfr= float(tarfr)  
                             appeach=spatial[selected_columns]
                             tota=appeach*tarfr
-                            tarfrate=pd.DataFrame({'Appliances': appeach,'Tariff for Usages of Appliances': tota(round(2)})
+                            tarfrate=pd.DataFrame({'Appliances': appeach,'Tariff for Usages of Appliances': tota})
                             tarfrate.reset_index(inplace = True)
                             tarfrate.rename(columns={'index':'Appliances'},inplace=True)
                             
