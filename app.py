@@ -1253,11 +1253,11 @@ the same energy as appliances used for short time periods at high wattage (power
                             st_each=appeach.T
                             st_each=st_each.reset_index()
 
-                            st_each.rename( columns={0:'Tariff Calculated / Day','index':'Appliances'}, inplace=True)
+                            st_each.rename(columns={0:'Tariff Calculated / Day','index':'Appliances'}, inplace=True)
                             
                             st_each=st_each.round(2)
                             
-                            st.dataframe(st_each))
+                            st.dataframe(st_each)
                             
                             
                             
