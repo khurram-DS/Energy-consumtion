@@ -1249,10 +1249,10 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
                             tarfr= float(tarfr)  
-                            appeach=spatial[selected_columns]*tarfr
-                            
-                            #tarfrate=pd.DataFrame({'Tariff for Usages of Appliances': appeach})
-                            
+                            appeach=spatial[selected_columns]
+                            tota=appeach*tarfr
+                            tarfrate=pd.DataFrame({'Appliances': appeach,'Tariff for Usages of Appliances': tota(round(2)})
+                            tarfrate.reset_index(inplace = True)
                             tarfrate.rename(columns={'index':'Appliances'},inplace=True)
                             
                             st.dataframe(tarfrate)
