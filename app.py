@@ -1176,6 +1176,70 @@ the same energy as appliances used for short time periods at high wattage (power
                 usages.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
                 if st.checkbox("click to check estimated Watts consumed per day by different appliances at your home"):
                     st.write(watt_data)
+                    
+                    import plotly.express as px
+                    
+                    fig1 = px.bar(usages, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by different Appliances",width=800, height=600)
+        
+                    st.write(fig1)
+                    
+                    st.subheader("What Spatial comfort equipment do you have")
+                    
+                    if st.checkbox("Lets check the details for Spatial comfort equipment"):
+                        
+                        spatial=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
+ 'Air Conditioner Central Split  - The estimated Watts consumed per day',
+ 'Air conditioning Units Mini split  - The estimated Watts consumed per day',
+ 'Air conditioning Units Windows  - The estimated Watts consumed per day',
+ 'Portable air cooler for single room - The estimated Watts consumed per day',
+ 'Air Purifier Device - The estimated Watts consumed per day',
+ 'Electric fan - The estimated Watts consumed per day',
+ 'Heater - Central  - The estimated Watts consumed per day',
+ 'Heater - Space Heater (Portable, Electric)  - The estimated Watts consumed per day',
+ 'Heater - Space Heater (Portable, Oil)  - The estimated Watts consumed per day']]
+                        
+                        spatial.columns=spatial.columns.str.replace('- The estimated Watts consumed per day', ' ')
+                        usages_spatial=spatial.T
+                        usages_spatial=usages_spatial.reset_index()
+                        usages_spatial.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
+                        if st.checkbox("click to check estimated Watts consumed per day by Spatial comfort equipment at your home"):
+                            st.write(spatial)
+                        
+                        fig2 = px.bar(usages_spatial, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by Spatial comfort equipment",width=800, height=600)
+                        st.write(fig2)
+                        
+                        st.subheader("Lets check the statistics of spatial comfort equipment at your home")
+                        stat_spatial=usages_spatial.describe()
+                        
+                        stat_spatial=stat_spatial.T
+                       
+                       
+                        statmmm_spatial=pd.DataFrame({})
+                        statmmm_spatial['mean']= stat_spatial['mean']
+                        statmmm_spatial['min']= stat_spatial['min']
+                        statmmm_spatial['max']= stat_spatial['max']
+                        statmmm_spatial=statmmm_spatial.T
+                        statmmm_spatial=statmmm_spatial.reset_index()
+                        
+                        statmmm_spatial.rename( columns={0:'Usages in Watts / day','index':'Statistics'}, inplace=True)
+                        
+                        if st.checkbox("click to check Statistics of estimated Watts consumed per day by Spatial comfort equipment at your home"):
+                            st.write(stat_spatial)
+                        
+                        fig3 = px.bar(statmmm_spatial, x="Statistics", y="Usages in Watts / day", title="stat of the Estimated watt consumed per Day by Spatial comfort equipment",width=800, height=600)
+                        st.write(fig3)
+                        
+                        st.subheader("Check the price for energy consumption based on appliance")
+                        if st.checkbox("Click to check the energy charges imposed on particular spatial appliances"):
+                            
+                            st.subheader("Predicting charges(Tariff) For all the spatial appliances")
+                            
+                            aspa=st.text_input("Input the per watt charge in kwd","0.02")
+                            aspa = float(aspa)  
+                            
+                            
+                            total_charge= usages_spatial['Usages in Watts / day'].sum()*aspa
+                            st.write(total_charge)
         
         
         
