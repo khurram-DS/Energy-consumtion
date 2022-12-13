@@ -911,7 +911,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             fcd['#3 What is the capacity?']=(fcd[2].str.split('/').str[1])
             fcd['#3 What is the capacity?']=(fcd['#3 What is the capacity?'].str.split(':').str[1])
-            fcd['#3 What is the capacity?']=(fcd['#3 What is the capacity?'].str.split(' ').str[0])
+            fcd['#3 What is the capacity?']=(fcd['#3 What is the capacity?'].str.split('(').str[0])
             import re
             fcd['Front loaded Clothes washer automatic - The estimated Watts consumed per day'] =pd.to_numeric(fcd[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -947,7 +947,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             topl['#3 What is the capacity?']=(topl[2].str.split('/').str[1])
             topl['#3 What is the capacity?']=(topl['#3 What is the capacity?'].str.split(':').str[1])
-            topl['#3 What is the capacity?']=(topl['#3 What is the capacity?'].str.split(' ').str[0])
+            topl['#3 What is the capacity?']=(topl['#3 What is the capacity?'].str.split('(').str[0])
             import re
             topl['Top loaded Clothes washer automatic - The estimated Watts consumed per day'] =pd.to_numeric(topl[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -983,7 +983,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             cwnl['#3 What is the capacity?']=(cwnl[2].str.split('/').str[1])
             cwnl['#3 What is the capacity?']=(cwnl['#3 What is the capacity?'].str.split(':').str[1])
-            cwnl['#3 What is the capacity?']=(cwnl['#3 What is the capacity?'].str.split(' ').str[0])
+            cwnl['#3 What is the capacity?']=(cwnl['#3 What is the capacity?'].str.split('(').str[0])
             import re
             cwnl['Clothes washer normal - The estimated Watts consumed per day'] =pd.to_numeric(cwnl[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -1019,7 +1019,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             dw['#3 What is the capacity?']=(dw[2].str.split('/').str[1])
             dw['#3 What is the capacity?']=(dw['#3 What is the capacity?'].str.split(':').str[1])
-            dw['#3 What is the capacity?']=(dw['#3 What is the capacity?'].str.split(' ').str[0])
+            dw['#3 What is the capacity?']=(dw['#3 What is the capacity?'].str.split('(').str[0])
             import re
             dw['Dish washer - The estimated Watts consumed per day'] =pd.to_numeric(dw[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -1055,7 +1055,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             ffff['#3 What is the capacity?']=(ffff[2].str.split('/').str[1])
             ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split(':').str[1])
-            ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split(' ').str[0])
+            ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split('(').str[0])
             import re
             ffff['Freezer - The estimated Watts consumed per day'] =pd.to_numeric(ffff[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -1091,7 +1091,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             refri['#3 What is the capacity?']=(refri[2].str.split('/').str[1])
             refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split(':').str[1])
-            refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split(' ').str[0])
+            refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split('(').str[0])
             import re
             refri['Refrigerator - The estimated Watts consumed per day'] =pd.to_numeric(refri[4].str.replace('[^\d.]', ''), errors='coerce')
             
