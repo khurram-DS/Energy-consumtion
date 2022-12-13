@@ -1255,7 +1255,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             st.write(appeach)
                             appeach=appeach.reset_index()
                             
-                            st.write("**Tariff Calculated Based on Energy Usages for \n [ {} ]**".format(appeach))
+                            st.write("**Tariff Calculated Based on Energy Usages for \n [ {} ]**".format(appeach.T))
                             
                             
         
