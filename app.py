@@ -1252,7 +1252,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             appeach=spatial[selected_columns]*tarfr
                             st.write(appeach)
                             tarfrate=pd.DataFrame({'Tariff for Usages of Appliances': appeach})
-                            tarfrate.reset_index(inplace = True)
+                            
                             tarfrate.rename(columns={'index':'Appliances'},inplace=True)
                             st.write(tarfrate)
                             st.dataframe(tarfrate)
