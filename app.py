@@ -1252,10 +1252,10 @@ the same energy as appliances used for short time periods at high wattage (power
                             appeach=spatial[selected_columns]*tarfr
                             appeach=appeach.round(2)
                             
+                            st.write(appeach)
+                            each=pd.DataFrame({'Tariff charges/ day': appeach})
                             
-                            st.dataframe(appeach)
-                            
-                            st.write("**Tariff Calculated Based on Energy Usages for \n [ {} ]**".format(appeach))
+                            st.write("**Tariff Calculated Based on Energy Usages for \n [ {} ]**".format(each))
                             
                             
         
