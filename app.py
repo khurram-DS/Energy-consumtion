@@ -1200,6 +1200,7 @@ the same energy as appliances used for short time periods at high wattage (power
                         
                         spatial.columns=spatial.columns.str.replace('- The estimated Watts consumed per day', ' ')
                         usages_spatial=spatial.T
+                        
                         usages_spatial=usages_spatial.reset_index()
                         usages_spatial.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
                         if st.checkbox("click to check estimated Watts consumed per day by Spatial comfort equipment at your home"):
@@ -1243,12 +1244,12 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             st.subheader("Predict charges(Tariff) For individual spatial appliances")
                             
-                            all_columns=usages_spatial.columns.to_list()
+                            all_columns=spatial.columns.to_list()
                             selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
                             
                             tarfr=st.text_input("Input the per watt charge in kwd","0.02")
                             tarfr= float(tarfr)  
-                            appeach=usages_spatial[selected_columns]*tarfr
+                            appeach=spatial[selected_columns]*tarfr
                             tarfrate=pd.DataFrame({'Tariff for Usages of Appliances': appeach})
                             tarfrate.reset_index(inplace = True)
                             tarfrate.rename(columns={'index':'Appliances'},inplace=True)
