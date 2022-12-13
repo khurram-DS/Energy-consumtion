@@ -1255,7 +1255,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             st.dataframe(appeach.round(2))
                             
-                            st.write("**Tariff Calculated Based on Energy Usages for [ {} ]**".format(tota.round(2)))
+                            st.write("**Tariff Calculated Based on Energy Usages for [ {} ]**".format(appeach.round(2)))
                             
                             
         
