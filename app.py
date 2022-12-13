@@ -1249,8 +1249,8 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
                             tarfr= float(tarfr)  
-                            appeach=spatial[selected_columns]*tarfr.round(2)
-                            
+                            appeach=spatial[selected_columns]*tarfr
+                            appeach=appeach.round(2)
                             
                             
                             st.dataframe(appeach)
