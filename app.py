@@ -143,7 +143,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new[3].str.split('/').str[1])
             new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new['#4 Unit size in Ton - Air Conditioner Central Packaged '].str.split(':').str[1])
-            #new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new['#4 Unit size in Ton - Air Conditioner Central Packaged '].str.split(expand=True))
+            new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new['#4 Unit size in Ton - Air Conditioner Central Packaged '].str.split(n=1,expand=True))
             
             import re
             new['Air Conditioner Central Packaged  - The estimated Watts consumed per day'] =pd.to_numeric(new[5].str.replace('[^\d.]', ''), errors='coerce')
