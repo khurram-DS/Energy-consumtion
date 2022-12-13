@@ -1247,7 +1247,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             all_columns=spatial.columns.to_list()
                             selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
                             
-                            tarfr=st.text_input("Input the per watt charge in kwd","0.02")
+                            tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
                             tarfr= float(tarfr)  
                             appeach=spatial[selected_columns]*tarfr
                             tarfrate=pd.DataFrame({'Tariff for Usages of Appliances': appeach})
