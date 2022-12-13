@@ -181,7 +181,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss[3].str.split('/').str[1])
             acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss['#4 Unit size in Ton - Air Conditioner Central Split '].str.split(':').str[1])
-            #acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss['#4 Unit size in Ton - Air Conditioner Central Split '].str.split(expand=True))
+            acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss['#4 Unit size in Ton - Air Conditioner Central Split '].str.split(' ').str[0])
             
             import re
             acss['Air Conditioner Central Split  - The estimated Watts consumed per day'] =pd.to_numeric(acss[5].str.replace('[^\d.]', ''), errors='coerce')
@@ -219,7 +219,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum[3].str.split('/').str[1])
             acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum['#4 Unit size in Ton - Air conditioning Units Mini split '].str.split(':').str[1])
-            #acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum['#4 Unit size in Ton - Air conditioning Units Mini split '].str.split(expand=True))
+            acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum['#4 Unit size in Ton - Air conditioning Units Mini split '].str.split(' ').str[0])
             
             import re
             acum['Air conditioning Units Mini split  - The estimated Watts consumed per day'] =pd.to_numeric(acum[5].str.replace('[^\d.]', ''), errors='coerce')
@@ -256,7 +256,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw[3].str.split('/').str[1])
             acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw['#4 Unit size in Ton - Air conditioning Units Windows '].str.split(':').str[1])
-            #acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw['#4 Unit size in Ton - Air conditioning Units Windows '].str.split(expand=True))
+            acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw['#4 Unit size in Ton - Air conditioning Units Windows '].str.split(' ').str[0])
             
             import re
             acuw['Air conditioning Units Windows  - The estimated Watts consumed per day'] =pd.to_numeric(acuw[5].str.replace('[^\d.]', ''), errors='coerce')
@@ -875,7 +875,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             cd['#3 What is the capacity?']=(cd[2].str.split('/').str[1])
             cd['#3 What is the capacity?']=(cd['#3 What is the capacity?'].str.split(':').str[1])
-            #cd['#3 What is the capacity?']=(cd['#3 What is the capacity?'].str.split(expand=True))
+            cd['#3 What is the capacity?']=(cd['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             cd['Clothes dryer - The estimated Watts consumed per day'] =pd.to_numeric(cd[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -911,7 +911,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             fcd['#3 What is the capacity?']=(fcd[2].str.split('/').str[1])
             fcd['#3 What is the capacity?']=(fcd['#3 What is the capacity?'].str.split(':').str[1])
-            #fcd['#3 What is the capacity?']=(fcd['#3 What is the capacity?'].str.split(expand=True))
+            fcd['#3 What is the capacity?']=(fcd['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             fcd['Front loaded Clothes washer automatic - The estimated Watts consumed per day'] =pd.to_numeric(fcd[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -947,7 +947,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             topl['#3 What is the capacity?']=(topl[2].str.split('/').str[1])
             topl['#3 What is the capacity?']=(topl['#3 What is the capacity?'].str.split(':').str[1])
-            #topl['#3 What is the capacity?']=(topl['#3 What is the capacity?'].str.split(expand=True))
+            topl['#3 What is the capacity?']=(topl['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             topl['Top loaded Clothes washer automatic - The estimated Watts consumed per day'] =pd.to_numeric(topl[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -983,7 +983,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             cwnl['#3 What is the capacity?']=(cwnl[2].str.split('/').str[1])
             cwnl['#3 What is the capacity?']=(cwnl['#3 What is the capacity?'].str.split(':').str[1])
-            #cwnl['#3 What is the capacity?']=(cwnl['#3 What is the capacity?'].str.split(expand=True))
+            cwnl['#3 What is the capacity?']=(cwnl['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             cwnl['Clothes washer normal - The estimated Watts consumed per day'] =pd.to_numeric(cwnl[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -1019,7 +1019,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             dw['#3 What is the capacity?']=(dw[2].str.split('/').str[1])
             dw['#3 What is the capacity?']=(dw['#3 What is the capacity?'].str.split(':').str[1])
-            #dw['#3 What is the capacity?']=(dw['#3 What is the capacity?'].str.split(expand=True))
+            dw['#3 What is the capacity?']=(dw['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             dw['Dish washer - The estimated Watts consumed per day'] =pd.to_numeric(dw[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -1055,7 +1055,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             ffff['#3 What is the capacity?']=(ffff[2].str.split('/').str[1])
             ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split(':').str[1])
-            #ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split(expand=True))
+            ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             ffff['Freezer - The estimated Watts consumed per day'] =pd.to_numeric(ffff[4].str.replace('[^\d.]', ''), errors='coerce')
             
@@ -1091,7 +1091,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             refri['#3 What is the capacity?']=(refri[2].str.split('/').str[1])
             refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split(':').str[1])
-            #refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split(expand=True))
+            refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split(' ').str[0])
             import re
             refri['Refrigerator - The estimated Watts consumed per day'] =pd.to_numeric(refri[4].str.replace('[^\d.]', ''), errors='coerce')
             
