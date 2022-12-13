@@ -1253,9 +1253,9 @@ the same energy as appliances used for short time periods at high wattage (power
                             appeach=appeach.round(2)
                             
                             st.write(appeach)
-                            each=pd.DataFrame({'Tariff charges/ day': [appeach]})
+                            appeach=appeach.reset_index()
                             
-                            st.write("**Tariff Calculated Based on Energy Usages for \n [ {} ]**".format(each))
+                            st.write("**Tariff Calculated Based on Energy Usages for \n [ {} ]**".format(appeach))
                             
                             
         
