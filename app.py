@@ -1258,7 +1258,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             
                             st.dataframe(st_each)
-                            fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",width=800, height=600)
+                            fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",color='total_charge',width=800, height=600)
                             st.write(fig4)
                             
                             
