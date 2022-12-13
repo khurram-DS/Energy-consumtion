@@ -1227,8 +1227,8 @@ the same energy as appliances used for short time periods at high wattage (power
                         if st.checkbox("click to check Statistics of estimated Watts consumed per day by Spatial comfort equipment at your home"):
                             st.write(stat_spatial)
                         
-                        fig3 = px.bar(statmmm_spatial, x="Statistics", y="Usages in Watts / day", title="stat of the Estimated watt consumed per Day by Spatial comfort equipment",width=800, height=600)
-                        st.write(fig3)
+                            fig3 = px.bar(statmmm_spatial, x="Statistics", y="Usages in Watts / day", title="stat of the Estimated watt consumed per Day by Spatial comfort equipment",width=800, height=600)
+                            st.write(fig3)
                         
                         st.subheader("Check the price for energy consumption based on appliance")
                         if st.checkbox("Click to check the energy charges imposed on particular/all spatial appliances"):
@@ -1258,7 +1258,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             
                             st.dataframe(st_each)
-                            fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",color='total_charge',width=800, height=600)
+                            fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",width=800, height=600)
                             st.write(fig4)
                             
                             
