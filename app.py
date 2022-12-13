@@ -1239,7 +1239,25 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             
                             total_charge= usages_spatial['Usages in Watts / day'].sum()*aspa
-                            st.write("**Total Tariff Calculated Based on Energy Usages is[ {} ]**".format(total_charge.round(2)))
+                            st.write("**Total Tariff Calculated Based on Energy Usages is [ {} ]**".format(total_charge.round(2)))
+                            
+                            st.subheader("Predict charges(Tariff) For individual spatial appliances")
+                            
+                            all_columns=usages_spatial.columns.to_list()
+                            selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
+                            
+                            tarfr=st.text_input("Input the per watt charge in kwd","0.02")
+                            tarfr= float(tarfr)  
+                            appeach=usages_spatial[selected_columns]*tarfr
+                            tarfrate=pd.DataFrame({'Tariff for Usages of Appliances': appeach})
+                            tarfrate.reset_index(inplace = True)
+                            tarfrate.rename(columns={'index':'Appliances'},inplace=True)
+                            
+                            st.dataframe(tarfrate)
+                            
+                            st.write("**Tariff Calculated Based on Energy Usages is [ {} ]**".format(appeach.round(2)))
+                            
+                            
         
         
         
