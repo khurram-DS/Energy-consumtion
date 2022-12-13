@@ -1230,7 +1230,7 @@ the same energy as appliances used for short time periods at high wattage (power
                         st.write(fig3)
                         
                         st.subheader("Check the price for energy consumption based on appliance")
-                        if st.checkbox("Click to check the energy charges imposed on particular spatial appliances"):
+                        if st.checkbox("Click to check the energy charges imposed on particular/all spatial appliances"):
                             
                             st.subheader("Predicting charges(Tariff) For all the spatial appliances")
                             
@@ -1239,7 +1239,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             
                             total_charge= usages_spatial['Usages in Watts / day'].sum()*aspa
-                            st.write(total_charge)
+                            st.write("Total Tariff Calculated Based on Eenrgy Usages is [ {} ]".format(total_charge(round(2))))
         
         
         
