@@ -1174,7 +1174,7 @@ the same energy as appliances used for short time periods at high wattage (power
                 usages=watt_data.T
                 usages=usages.reset_index()
                 usages.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
-                if st.checkbox("The estimated Watts consumed per day by different appliances at your home"):
+                if st.checkbox("click to check estimated Watts consumed per day by different appliances at your home"):
                     st.write(watt_data)
         
         
