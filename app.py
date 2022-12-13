@@ -1239,7 +1239,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             
                             total_charge= usages_spatial['Usages in Watts / day'].sum()*aspa
-                            st.write("Total Tariff Calculated Based on Energy Usages is[ {} ]".format(total_charge.round(2)))
+                            st.write("**Total Tariff Calculated Based on Energy Usages is[ {} ]**".format(total_charge.round(2)))
         
         
         
