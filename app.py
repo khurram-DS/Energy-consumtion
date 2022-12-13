@@ -1257,12 +1257,12 @@ the same energy as appliances used for short time periods at high wattage (power
                             
 
                             
-                            st.dataframe(st_each)
+                            st.dataframe(st_each.round(2))
                             
                             
                             
                             
-                            #st.write("**Tariff Calculated Based on Energy Usages for  [{}]**".format(each_app))
+                            st.write("**Tariff Calculated Based on Energy Usages for \n [{}]**".format(st_each.round(2)))
                             
                             
         
