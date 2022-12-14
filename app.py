@@ -1410,9 +1410,9 @@ the same energy as appliances used for short time periods at high wattage (power
                                 fig10 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for water Appliances",hover_data=['Tariff Calculated / Day in KWD'],width=800, height=600)
                                 st.write(fig10)
                                 
-                    st.subheader("What Appliances Equipment do you have")
+                    st.subheader("What Appliances do you have")
                     
-                    if st.checkbox("Lets check the details for Appliances Equipment"):
+                    if st.checkbox("Lets check the details for Appliances"):
                         
                         Appliances=new_data[['Clothes dryer - The estimated Watts consumed per day',
  'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
@@ -1427,13 +1427,13 @@ the same energy as appliances used for short time periods at high wattage (power
                         
                         usages_Appliances=usages_Appliances.reset_index()
                         usages_Appliances.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
-                        #if st.checkbox("click to check estimated Watts consumed per day by Appliances Equipment at your home"):
+                        #if st.checkbox("click to check estimated Watts consumed per day by Appliances at your home"):
                         st.write(Appliances)
                         
-                        fig12 = px.bar(usages_Appliances, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by Appliances Equipment ",width=800, height=600)
+                        fig12 = px.bar(usages_Appliances, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by Appliances ",width=800, height=600)
                         st.write(fig12)
                         
-                        st.subheader("Lets check the statistics of Appliances Equipment at your home")
+                        st.subheader("Lets check the statistics of Appliances at your home")
                         stat_Appliances=usages_Appliances.describe()
                         
                         stat_Appliances=stat_Appliances.T
@@ -1448,10 +1448,10 @@ the same energy as appliances used for short time periods at high wattage (power
                         
                         statmmm_Appliances.rename( columns={0:'Usages in Watts / day','index':'Statistics'}, inplace=True)
                         
-                        if st.checkbox("click to check Statistics of estimated Watts consumed per day by Appliances Equipment at your home"):
+                        if st.checkbox("click to check Statistics of estimated Watts consumed per day by Appliances at your home"):
                             st.write(stat_Appliances)
                         
-                            fig11 = px.bar(statmmm_Appliances, x="Statistics", y="Usages in Watts / day", title="stat of the Estimated watt consumed per Day by Appliances Equipment ",width=800, height=600)
+                            fig11 = px.bar(statmmm_Appliances, x="Statistics", y="Usages in Watts / day", title="stat of the Estimated watt consumed per Day by Appliances ",width=800, height=600)
                             st.write(fig11)
                         
                         st.subheader("Check the price for energy consumption based on Appliances appliance")
