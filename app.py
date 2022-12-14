@@ -1183,7 +1183,7 @@ the same energy as appliances used for short time periods at high wattage (power
         
                     st.write(fig1)
                     
-                    st.subheader("What Spatial comfort equipment do you have")
+                    st.subheader("What Spatial comfort equipment do you have ?")
                     
                     if st.checkbox("Lets check the details for Spatial comfort equipment"):
                         
@@ -1262,7 +1262,7 @@ the same energy as appliances used for short time periods at high wattage (power
                                 fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",width=800, height=600)
                                 st.write(fig4)
                             
-                    st.subheader("What Cooking Equipment do you have")
+                    st.subheader("What Cooking Equipment do you have ?")
                     
                     if st.checkbox("Lets check the details for Cooking Equipment"):
                         
@@ -1339,7 +1339,7 @@ the same energy as appliances used for short time periods at high wattage (power
                                 fig7 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for cooking Appliances",width=800, height=600)
                                 st.write(fig7)
                                 
-                    st.subheader("What water Equipment do you have")
+                    st.subheader("What water Equipment do you have ?")
                     
                     if st.checkbox("Lets check the details for water Equipment"):
                         
@@ -1410,7 +1410,7 @@ the same energy as appliances used for short time periods at high wattage (power
                                 fig10 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for water Appliances",hover_data=['Tariff Calculated / Day in KWD'],width=800, height=600)
                                 st.write(fig10)
                                 
-                    st.subheader("What Appliances do you have")
+                    st.subheader("What Appliances do you have ?")
                     
                     if st.checkbox("Lets check the details for Appliances"):
                         
