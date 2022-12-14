@@ -1185,7 +1185,7 @@ the same energy as appliances used for short time periods at high wattage (power
                     
                     st.subheader("What Spatial comfort equipment do you have")
                     
-                    #if st.checkbox("Lets check the details for Spatial comfort equipment"):
+                    if st.checkbox("Lets check the details for Spatial comfort equipment"):
                         
                         spatial=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
  'Air Conditioner Central Split  - The estimated Watts consumed per day',
@@ -1203,8 +1203,8 @@ the same energy as appliances used for short time periods at high wattage (power
                         
                         usages_spatial=usages_spatial.reset_index()
                         usages_spatial.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
-                        if st.checkbox("click to check estimated Watts consumed per day by Spatial comfort equipment at your home"):
-                            st.write(spatial)
+                        #if st.checkbox("click to check estimated Watts consumed per day by Spatial comfort equipment at your home"):
+                        st.write(spatial)
                         
                         fig2 = px.bar(usages_spatial, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by Spatial comfort equipment",width=800, height=600)
                         st.write(fig2)
