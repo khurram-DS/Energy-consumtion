@@ -1312,7 +1312,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             st.subheader("Predicting charges(Tariff) For all the cooking appliances")
                             
-                            aspa=st.text_input("Input the per watt charge in kwd","0.02")
+                            aspa=st.text_input("Input the per watt charge in kwd for your Appliances","0.02")
                             aspa = float(aspa)  
                             
                             
@@ -1324,7 +1324,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             all_columns=cooking.columns.to_list()
                             selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
                             
-                            tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
+                            tarfr=st.text_input("Input the per watt charge in kwd default value is 0.02","0.02")
                             tarfr= float(tarfr)  
                             appeach=cooking[selected_columns]*tarfr
                             st_each=appeach.T
