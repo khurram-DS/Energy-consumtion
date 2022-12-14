@@ -1243,23 +1243,23 @@ the same energy as appliances used for short time periods at high wattage (power
                             st.write("**Total Tariff Calculated Based on Energy Usages is [ {} ]**".format(total_charge.round(2)))
                             
                             st.subheader("Predict charges(Tariff) For individual spatial appliances")
-                            
-                            all_columns=spatial.columns.to_list()
-                            selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
-                            
-                            tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
-                            tarfr= float(tarfr)  
-                            appeach=spatial[selected_columns]*tarfr
-                            st_each=appeach.T
-                            st_each=st_each.reset_index()
+                            if st.checkbox("Click tp predict the charges imposed by spatial equipment appliances"):
+                                all_columns=spatial.columns.to_list()
+                                selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
 
-                            st_each.rename(columns={0:'Tariff Calculated / Day in KWD','index':'Appliances'}, inplace=True)
-                            
-                            
-                            
-                            st.dataframe(st_each)
-                            fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",width=800, height=600)
-                            st.write(fig4)
+                                tarfr=st.text_input("Input the per watt charge in kwd default value is entered","0.02")
+                                tarfr= float(tarfr)  
+                                appeach=spatial[selected_columns]*tarfr
+                                st_each=appeach.T
+                                st_each=st_each.reset_index()
+
+                                st_each.rename(columns={0:'Tariff Calculated / Day in KWD','index':'Appliances'}, inplace=True)
+
+
+
+                                st.dataframe(st_each)
+                                fig4 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Spatial Appliances",width=800, height=600)
+                                st.write(fig4)
                             
                     st.subheader("What Cooking Equipment do you have")
                     
@@ -1320,24 +1320,24 @@ the same energy as appliances used for short time periods at high wattage (power
                             st.write("**Total Tariff Calculated Based on Energy Usages is [ {} ]**".format(total_charge.round(2)))
                             
                             st.subheader("Predict charges(Tariff) For individual cooking appliances")
-                            
-                            all_columns=cooking.columns.to_list()
-                            selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
-                            
-                            tarfr=st.text_input("Input the per watt charge in kwd default value is 0.02","0.02")
-                            tarfr= float(tarfr)  
-                            appeach=cooking[selected_columns]*tarfr
-                            st_each=appeach.T
-                            st_each=st_each.reset_index()
+                            if st.checkbox("Click to predict the Energy charges for cooking appliances):
+                                all_columns=cooking.columns.to_list()
+                                selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
 
-                            st_each.rename(columns={0:'Tariff Calculated / Day in KWD','index':'Appliances'}, inplace=True)
-                            
-                            
-                            
-                            st.dataframe(st_each)
-                            fig7 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for cooking Appliances",width=800, height=600)
-                            st.write(fig7)
-                     
+                                tarfr=st.text_input("Input the per watt charge in kwd default value is 0.02","0.02")
+                                tarfr= float(tarfr)  
+                                appeach=cooking[selected_columns]*tarfr
+                                st_each=appeach.T
+                                st_each=st_each.reset_index()
+
+                                st_each.rename(columns={0:'Tariff Calculated / Day in KWD','index':'Appliances'}, inplace=True)
+
+
+
+                                st.dataframe(st_each)
+                                fig7 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for cooking Appliances",width=800, height=600)
+                                st.write(fig7)
+
                             
                             
                             
