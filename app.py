@@ -1183,9 +1183,9 @@ the same energy as appliances used for short time periods at high wattage (power
         
                     st.write(fig1)
                     
-                    st.subheader("What Spatial comfort equipment do you have")
+                        st.subheader("What Spatial comfort equipment do you have")
                     
-                    if st.checkbox("Lets check the details for Spatial comfort equipment"):
+                    #if st.checkbox("Lets check the details for Spatial comfort equipment"):
                         
                         spatial=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
  'Air Conditioner Central Split  - The estimated Watts consumed per day',
