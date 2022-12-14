@@ -1243,7 +1243,8 @@ the same energy as appliances used for short time periods at high wattage (power
                             st.write("**Total Tariff Calculated Based on Energy Usages is [ {} ]**".format(total_charge.round(2)))
                             
                             st.subheader("Predict charges(Tariff) For individual spatial appliances")
-                            if st.checkbox("Click tp predict the charges imposed by spatial equipment appliances"):
+                            if st.checkbox("Click to predict the charges imposed by spatial equipment appliances"):
+                                
                                 all_columns=spatial.columns.to_list()
                                 selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
 
