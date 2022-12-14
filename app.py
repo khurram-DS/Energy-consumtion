@@ -1409,6 +1409,81 @@ the same energy as appliances used for short time periods at high wattage (power
                                 st.dataframe(st_each)
                                 fig10 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for water Appliances",hover_data=['Tariff Calculated / Day in KWD'],width=800, height=600)
                                 st.write(fig10)
+                                
+                    st.subheader("What Appliances Equipment do you have")
+                    
+                    if st.checkbox("Lets check the details for Appliances Equipment"):
+                        
+                        Appliances=new_data[['Clothes dryer - The estimated Watts consumed per day',
+ 'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
+ 'Top loaded Clothes washer automatic - The estimated Watts consumed per day',
+ 'Clothes washer normal - The estimated Watts consumed per day',
+ 'Dish washer - The estimated Watts consumed per day',
+ 'Freezer - The estimated Watts consumed per day',
+ 'Refrigerator - The estimated Watts consumed per day']]
+                        
+                        Appliances.columns=Appliances.columns.str.replace('- The estimated Watts consumed per day', ' ')
+                        usages_Appliances=Appliances.T
+                        
+                        usages_Appliances=usages_Appliances.reset_index()
+                        usages_Appliances.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
+                        #if st.checkbox("click to check estimated Watts consumed per day by Appliances Equipment at your home"):
+                        st.write(Appliances)
+                        
+                        fig12 = px.bar(usages_Appliances, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by Appliances Equipment ",width=800, height=600)
+                        st.write(fig12)
+                        
+                        st.subheader("Lets check the statistics of Appliances Equipment at your home")
+                        stat_Appliances=usages_Appliances.describe()
+                        
+                        stat_Appliances=stat_Appliances.T
+                       
+                       
+                        statmmm_Appliances=pd.DataFrame({})
+                        statmmm_Appliances['mean']= stat_Appliances['mean']
+                        statmmm_Appliances['min']= stat_Appliances['min']
+                        statmmm_Appliances['max']= stat_Appliances['max']
+                        statmmm_Appliances=statmmm_Appliances.T
+                        statmmm_Appliances=statmmm_Appliances.reset_index()
+                        
+                        statmmm_Appliances.rename( columns={0:'Usages in Watts / day','index':'Statistics'}, inplace=True)
+                        
+                        if st.checkbox("click to check Statistics of estimated Watts consumed per day by Appliances Equipment at your home"):
+                            st.write(stat_Appliances)
+                        
+                            fig11 = px.bar(statmmm_Appliances, x="Statistics", y="Usages in Watts / day", title="stat of the Estimated watt consumed per Day by Appliances Equipment ",width=800, height=600)
+                            st.write(fig11)
+                        
+                        st.subheader("Check the price for energy consumption based on Appliances appliance")
+                        if st.checkbox("Click to check the energy charges imposed on particular/all Appliances appliances"):
+                            
+                            st.subheader("Predicting charges(Tariff) For all the Appliances appliances")
+                            
+                            wapp=st.text_input("please enter the per watt charge in kwd for your Appliances","0.02")
+                            wapp = float(wapp)  
+                            
+                            
+                            total_charge= usages_Appliances['Usages in Watts / day'].sum()*wapp
+                            st.write("**Total Tariff Calculated Based on Energy Usages is [ {} ]**".format(total_charge.round(2)))
+                            
+                            st.subheader("Predict charges(Tariff) For individual Appliances appliances")
+                            if st.checkbox("Click to predict the Energy charges for Appliances appliances"):
+                                all_columns=Appliances.columns.to_list()
+                                selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
+
+                                tarfr=st.text_input("please enter the per watt charge in kwd default value is 0.02","0.02")
+                                tarfr= float(tarfr)  
+                                appeach=Appliances[selected_columns]*tarfr
+                                st_each=appeach.T
+                                st_each=st_each.reset_index()
+
+                                st_each.rename(columns={0:'Tariff Calculated / Day in KWD','index':'Appliances'}, inplace=True)
+
+
+
+                                st.dataframe(st_each)
+                                fig10 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for Appliances Appliances",width=800, height=600)
+                                st.write(fig10)
 
                             
                             
