@@ -1384,7 +1384,7 @@ the same energy as appliances used for short time periods at high wattage (power
                             
                             st.subheader("Predicting charges(Tariff) For all the water appliances")
                             
-                            wapp=st.text_input("Input the per watt charge in kwd for your Appliances","0.02")
+                            wapp=st.text_input("Input the per watt charge in kwd based on asked price","0.02")
                             wapp = float(wapp)  
                             
                             
@@ -1396,7 +1396,7 @@ the same energy as appliances used for short time periods at high wattage (power
                                 all_columns=water.columns.to_list()
                                 selected_columns= st.multiselect("Select Appliances to predict the Tariff charges", all_columns)
 
-                                tarfr=st.text_input("Input the per watt charge in kwd default value is 0.02","0.02")
+                                tarfr=st.text_input("Input the per watt charge in kwd default value has entered","0.02")
                                 tarfr= float(tarfr)  
                                 appeach=water[selected_columns]*tarfr
                                 st_each=appeach.T
@@ -1407,7 +1407,7 @@ the same energy as appliances used for short time periods at high wattage (power
 
 
                                 st.dataframe(st_each)
-                                fig10 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for water Appliances",width=800, height=600)
+                                fig10 = px.bar(st_each, x="Appliances", y="Tariff Calculated / Day in KWD", title="Tariff Calculated / Day in (KWD) for water Appliances",hover_data=['Tariff Calculated / Day in KWD'],width=800, height=600)
                                 st.write(fig10)
 
                             
