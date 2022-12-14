@@ -1183,7 +1183,7 @@ the same energy as appliances used for short time periods at high wattage (power
         
                     st.write(fig1)
                     
-                        st.subheader("What Spatial comfort equipment do you have")
+                    st.subheader("What Spatial comfort equipment do you have")
                     
                     #if st.checkbox("Lets check the details for Spatial comfort equipment"):
                         
