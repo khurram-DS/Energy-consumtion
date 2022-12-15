@@ -1182,6 +1182,28 @@ the same energy as appliances used for short time periods at high wattage (power
                     fig1 = px.bar(usages, x="Appliances", y="Usages in Watts / day", title="The Estimated watt consumed per Day by different Appliances",width=800, height=600)
         
                     st.write(fig1)
+            
+                    st.subheader("Below Table for Different types of Equipments and its estimated watts consumed per day")
+                    spat=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
+'Air Conditioner Central Split  - The estimated Watts consumed per day',
+'Air conditioning Units Mini split  - The estimated Watts consumed per day',
+'Air conditioning Units Windows  - The estimated Watts consumed per day',
+'Portable air cooler for single room - The estimated Watts consumed per day',
+'Air Purifier Device - The estimated Watts consumed per day',
+'Electric fan - The estimated Watts consumed per day',
+'Heater - Central  - The estimated Watts consumed per day',
+'Heater - Space Heater (Portable, Electric)  - The estimated Watts consumed per day',
+'Heater - Space Heater (Portable, Oil)  - The estimated Watts consumed per day']]
+
+                    spat.columns=spat.columns.str.replace('- The estimated Watts consumed per day', ' ')
+                    usages_spat=spat.T
+
+                    usages_spat=usages_spat.reset_index()
+                    usages_spat.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
+                    #if st.checkbox("click to check estimated Watts consumed per day by Spatial comfort equipment at your home"):
+                    st.write(spat)
+                    st.write(usages_spat)
+                    
                     
                 st.subheader("What Spatial comfort equipment do you have ?")
 
