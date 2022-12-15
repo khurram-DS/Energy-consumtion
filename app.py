@@ -1183,7 +1183,9 @@ the same energy as appliances used for short time periods at high wattage (power
         
                     st.write(fig1)
             
-                    st.subheader("Below Table for Different types of Equipments and its estimated watts consumed per day")
+                    st.subheader("**Below Table for Different types of Equipments and its estimated watts consumed per day**")
+                    st.write("**Spatial comfort equipment estimated watts consumed per day**")
+                    
                     spat=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
 'Air Conditioner Central Split  - The estimated Watts consumed per day',
 'Air conditioning Units Mini split  - The estimated Watts consumed per day',
@@ -1200,9 +1202,61 @@ the same energy as appliances used for short time periods at high wattage (power
 
                     usages_spat=usages_spat.reset_index()
                     usages_spat.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
-                    #if st.checkbox("click to check estimated Watts consumed per day by Spatial comfort equipment at your home"):
-                    st.write(spat)
+               
                     st.write(usages_spat)
+                    
+                    st.write("**Cooking Equipment estimated watts consumed per day**")
+                    cook=new_data[['Blender/mixer/food processor  - The estimated Watts consumed per day',
+'kettle- The estimated Watts consumed per day',
+'Toaster- The estimated Watts consumed per day',
+'Range - LPG- The estimated Watts consumed per day',
+'Range - Electric- The estimated Watts consumed per day',
+'Cooktop - (LPG/Electric/Induction)- The estimated Watts consumed per day',
+'Oven -(LPG/Electric)- The estimated Watts consumed per day',
+'Air fryer- The estimated Watts consumed per day',
+'Coffee Maker- The estimated Watts consumed per day']]
+
+                    cook.columns=cook.columns.str.replace('- The estimated Watts consumed per day', ' ')
+                    usages_cook=cook.T
+
+                    usages_cook=usages_cook.reset_index()
+                    usages_cook.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
+                    
+                    st.write(usages_cook)
+                    
+                    st.write("**Water Equipment estimated watts consumed per day**")
+                    wat=new_data[['Water Cooler - The estimated Watts consumed per day',
+'Water Heater - Central - The estimated Watts consumed per day',
+'Water Heater - Normal - The estimated Watts consumed per day',]]
+
+                    wat.columns=wat.columns.str.replace('- The estimated Watts consumed per day', ' ')
+                    usages_wat=wat.T
+
+                    usages_wat=usages_wat.reset_index()
+                    usages_wat.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
+                    #if st.checkbox("click to check estimated Watts consumed per day by water Equipment at your home"):
+                    st.write(usages_wat)
+                    
+                    st.write("**Appliances estimated watts consumed per day**")
+                    
+                    Applian=new_data[['Clothes dryer - The estimated Watts consumed per day',
+'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
+'Top loaded Clothes washer automatic - The estimated Watts consumed per day',
+'Clothes washer normal - The estimated Watts consumed per day',
+'Dish washer - The estimated Watts consumed per day',
+'Freezer - The estimated Watts consumed per day',
+'Refrigerator - The estimated Watts consumed per day']]
+
+                    Applian.columns=Applian.columns.str.replace('- The estimated Watts consumed per day', ' ')
+                    usages_Applian=Applian.T
+
+                    usages_Applian=usages_Applian.reset_index()
+                    usages_Applian.rename( columns={0:'Usages in Watts / day','index':'Appliances'}, inplace=True)
+                    
+                    st.write(usages_Applian)
+                    
+                
+                
                     
                     
                 st.subheader("What Spatial comfort equipment do you have ?")
