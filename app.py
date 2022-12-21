@@ -670,7 +670,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 17th
             data=[]
-            data = df['Oven -(LPG/Electric) - فرن كهربائي للطبخ'].str.split('\n',expand=True)
+            data = df['Oven -(LPG/Electric) - فرن كهربائي للطبخ متنقل'].str.split('\n',expand=True)
             ole=celi.join(data)
             ole['#1 units owned - Oven -(LPG/Electric) ']=(ole[0].str.split('/').str[1])
             ole['#1 units owned - Oven -(LPG/Electric) ']=(ole['#1 units owned - Oven -(LPG/Electric) '].str.split(':').str[1])
@@ -686,7 +686,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             ole=ole.drop([0,1,2,3], axis=1)
             
-            col17=ole.columns.get_loc('Oven -(LPG/Electric) - فرن كهربائي للطبخ')
+            col17=ole.columns.get_loc('Oven -(LPG/Electric) - فرن كهربائي للطبخ متنقل')
             
             first_oleumn = ole.pop('#1 units owned - Oven -(LPG/Electric) ')
             
