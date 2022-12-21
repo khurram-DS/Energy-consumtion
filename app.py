@@ -167,7 +167,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 2nd
             data=[]
-            data = df['Air Conditioner Central Split - وحدة تكييف مركزي منفصلة'].str.split('\n',expand=True)
+            data = df['Air Conditioner Central Split - وحدات تكييف (مركزي منفصلة)'].str.split('\n',expand=True)
             acss=new.join(data)
             
             acss['#1 units owned - Air Conditioner Central Split ']=(acss[0].str.split('/').str[1])
@@ -188,7 +188,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acss=acss.drop([0,1,2,3,4,5], axis=1)
             
-            col2=acss.columns.get_loc('Air Conditioner Central Split - وحدة تكييف مركزي منفصلة')
+            col2=acss.columns.get_loc('Air Conditioner Central Split - وحدات تكييف (مركزي منفصلة)')
             
             first_acssumn = acss.pop('#1 units owned - Air Conditioner Central Split ')
             second_acssumn=acss.pop('#2 Average temperature (C) setting - Air Conditioner Central Split ')
@@ -205,7 +205,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 3rd
             data=[]
-            data = df['Air conditioning Units Mini split - وحدة تكييف مركزي منفصلة'].str.split('\n',expand=True)
+            data = df['Air conditioning Units Mini split - وحدة تكييف (مركزي منفصلة)'].str.split('\n',expand=True)
             acum=acss.join(data)
             
             acum['#1 units owned - Air conditioning Units Mini split ']=(acum[0].str.split('/').str[1])
@@ -226,7 +226,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acum=acum.drop([0,1,2,3,4,5], axis=1)
             
-            col3=acum.columns.get_loc('Air conditioning Units Mini split - وحدة تكييف مركزي منفصلة')
+            col3=acum.columns.get_loc('Air conditioning Units Mini split - وحدة تكييف (مركزي منفصلة)')
             
             first_acumumn = acum.pop('#1 units owned - Air conditioning Units Mini split ')
             second_acumumn=acum.pop('#2 Average temperature (C) setting - Air conditioning Units Mini split ')
@@ -242,7 +242,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 4th
             data=[]
-            data = df['Air conditioning Units Windows - نوافذ وحدات التكييف'].str.split('\n',expand=True)
+            data = df['Air conditioning Units Windows -  وحدات التكييف (نوافذ)'].str.split('\n',expand=True)
             acuw=acum.join(data)
             
             acuw['#1 units owned - Air conditioning Units Windows ']=(acuw[0].str.split('/').str[1])
@@ -263,7 +263,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acuw=acuw.drop([0,1,2,3,4,5], axis=1)
             
-            col4=acuw.columns.get_loc('Air conditioning Units Windows - نوافذ وحدات التكييف')
+            col4=acuw.columns.get_loc('Air conditioning Units Windows -  وحدات التكييف (نوافذ)')
             
             first_acuwumn = acuw.pop('#1 units owned - Air conditioning Units Windows ')
             second_acuwumn=acuw.pop('#2 Average temperature (C) setting - Air conditioning Units Windows ')
