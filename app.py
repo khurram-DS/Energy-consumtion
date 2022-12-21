@@ -478,7 +478,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 11th
             data=[]
-            data = df['Blender/mixer/food processor - الخلاط//طاحن الطعام'].str.split('\n',expand=True)
+            data = df['Blender/mixer/food processor - الخلاط//طاحن الطعام حلة أرز / حلة ضغط / مقلاة هوائية'].str.split('\n',expand=True)
             mbm=hso.join(data)
             mbm['#1 units owned - Blender/mixer/food processor ']=(mbm[0].str.split('/').str[1])
             mbm['#1 units owned - Blender/mixer/food processor ']=(mbm['#1 units owned - Blender/mixer/food processor '].str.split(':').str[1])
@@ -494,7 +494,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             mbm=mbm.drop([0,1,2,3], axis=1)
             
-            col11=mbm.columns.get_loc('Blender/mixer/food processor - الخلاط//طاحن الطعام')
+            col11=mbm.columns.get_loc('Blender/mixer/food processor - الخلاط//طاحن الطعام حلة أرز / حلة ضغط / مقلاة هوائية')
             
             first_mbmumn = mbm.pop('#1 units owned - Blender/mixer/food processor ')
             
@@ -574,7 +574,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 14th
             data=[]
-            data = df['Range - LPG - موقد للطبخ'].str.split('\n',expand=True)
+            data = df['Range - LPG - موقد للطبخ - غاز البترول المسال (يشمل غاز البترول المسال بالفرن ، غاز البترول المسال بالكهرباء)'].str.split('\n',expand=True)
             lpg=toast.join(data)
             lpg['#1 units owned - Range - LPG ']=(lpg[0].str.split('/').str[1])
             lpg['#1 units owned - Range - LPG ']=(lpg['#1 units owned - Range - LPG '].str.split(':').str[1])
@@ -590,7 +590,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             lpg=lpg.drop([0,1,2,3], axis=1)
             
-            col14=lpg.columns.get_loc('Range - LPG - موقد للطبخ')
+            col14=lpg.columns.get_loc('Range - LPG - موقد للطبخ - غاز البترول المسال (يشمل غاز البترول المسال بالفرن ، غاز البترول المسال بالكهرباء)')
             
             first_lpgumn = lpg.pop('#1 units owned - Range - LPG ')
             
