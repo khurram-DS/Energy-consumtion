@@ -143,7 +143,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new[3].str.split('/').str[1])
             new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new['#4 Unit size in Ton - Air Conditioner Central Packaged '].str.split(':').str[1])
-            new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new['#4 Unit size in Ton - Air Conditioner Central Packaged '].str.split(' ').str[0])
+            new['#4 Unit size in Ton - Air Conditioner Central Packaged ']=(new['#4 Unit size in Ton - Air Conditioner Central Packaged '].str.split(' ').str[-3])
             
             import re
             new['Air Conditioner Central Packaged  - The estimated Watts consumed per day'] =pd.to_numeric(new[5].str.replace('[^\d.]', ''), errors='coerce')
@@ -181,7 +181,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss[3].str.split('/').str[1])
             acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss['#4 Unit size in Ton - Air Conditioner Central Split '].str.split(':').str[1])
-            acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss['#4 Unit size in Ton - Air Conditioner Central Split '].str.split(' ').str[0])
+            acss['#4 Unit size in Ton - Air Conditioner Central Split ']=(acss['#4 Unit size in Ton - Air Conditioner Central Split '].str.split(' ').str[-3])
             
             import re
             acss['Air Conditioner Central Split  - The estimated Watts consumed per day'] =pd.to_numeric(acss[5].str.replace('[^\d.]', ''), errors='coerce')
@@ -219,7 +219,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum[3].str.split('/').str[1])
             acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum['#4 Unit size in Ton - Air conditioning Units Mini split '].str.split(':').str[1])
-            acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum['#4 Unit size in Ton - Air conditioning Units Mini split '].str.split(' ').str[0])
+            acum['#4 Unit size in Ton - Air conditioning Units Mini split ']=(acum['#4 Unit size in Ton - Air conditioning Units Mini split '].str.split(' ').str[-3])
             
             import re
             acum['Air conditioning Units Mini split  - The estimated Watts consumed per day'] =pd.to_numeric(acum[5].str.replace('[^\d.]', ''), errors='coerce')
@@ -256,7 +256,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw[3].str.split('/').str[1])
             acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw['#4 Unit size in Ton - Air conditioning Units Windows '].str.split(':').str[1])
-            acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw['#4 Unit size in Ton - Air conditioning Units Windows '].str.split(' ').str[0])
+            acuw['#4 Unit size in Ton - Air conditioning Units Windows ']=(acuw['#4 Unit size in Ton - Air conditioning Units Windows '].str.split(' ').str[-3])
             
             import re
             acuw['Air conditioning Units Windows  - The estimated Watts consumed per day'] =pd.to_numeric(acuw[5].str.replace('[^\d.]', ''), errors='coerce')
