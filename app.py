@@ -830,7 +830,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             #column 22th
             data=[]
-            data = df['Water Heater - Normal - سخان المياه - عادي'].str.split('\n',expand=True)
+            data = df['Water Heater - Normal -  مستقل سخان المياه -عادي'].str.split('\n',expand=True)
             whn=whc.join(data)
             whn['#1 units owned - Water Heater - Normal  ']=(whn[0].str.split('/').str[1])
             whn['#1 units owned - Water Heater - Normal  ']=(whn['#1 units owned - Water Heater - Normal  '].str.split(':').str[1])
@@ -846,7 +846,7 @@ the same energy as appliances used for short time periods at high wattage (power
             
             whn=whn.drop([0,1,2,3], axis=1)
             
-            col22=whn.columns.get_loc('Water Heater - Normal - سخان المياه - عادي')
+            col22=whn.columns.get_loc('Water Heater - Normal -  مستقل سخان المياه -عادي')
             
             first_whnumn = whn.pop('#1 units owned - Water Heater - Normal  ')
             
