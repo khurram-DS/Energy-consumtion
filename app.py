@@ -1233,7 +1233,7 @@ the same energy as appliances used for short time periods at high wattage (power
  'Clothes washer normal - The estimated Watts consumed per day',
  'Dish washer - The estimated Watts consumed per day',
  'Freezer - The estimated Watts consumed per day',
- 'Refrigerator - The estimated Watts consumed per day']
+ 'Refrigerator - The estimated Watts consumed per day']]
 
                     Applian.columns=Applian.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_Applian=Applian.T
