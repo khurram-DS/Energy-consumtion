@@ -1043,74 +1043,62 @@ the same energy as appliances used for short time periods at high wattage (power
             #column 28th
             data=[]
             data = df['Freezer - الفريزر'].str.split('\n',expand=True)
-            
+
             ffff=dw.join(data)
             ffff['#1 units owned - Freezer  ']=(ffff[0].str.split('/').str[1])
             ffff['#1 units owned - Freezer  ']=(ffff['#1 units owned - Freezer  '].str.split(':').str[1])
-            
-            
-            
-            ffff['#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Freezer']=(ffff[1].str.split('/').str[1])
-            ffff['#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Freezer']=(ffff['#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Freezer'].str.split(':').str[1])
-            
-            ffff['#3 What is the capacity?']=(ffff[2].str.split('/').str[1])
-            ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split(':').str[1])
-            ffff['#3 What is the capacity?']=(ffff['#3 What is the capacity?'].str.split('(').str[0])
+
+            ffff['#2 What is the capacity?']=(ffff[1].str.split('/').str[1])
+            ffff['#2 What is the capacity?']=(ffff['#2 What is the capacity?'].str.split(':').str[1])
+            ffff['#2 What is the capacity?']=(ffff['#2 What is the capacity?'].str.split('(').str[0])
             import re
-            ffff['Freezer - The estimated Watts consumed per day'] =pd.to_numeric(ffff[4].str.replace('[^\d.]', ''), errors='coerce')
+            ffff['Freezer - The estimated Watts consumed per day'] =pd.to_numeric(ffff[3].str.replace('[^\d.]', ''), errors='coerce')
             
-            ffff=ffff.drop([0,1,2,3,4], axis=1)
-            
+            ffff=ffff.drop([0,1,2,3], axis=1)
+
             col28=ffff.columns.get_loc('Freezer - الفريزر')
-            
+
             first_ffffumn = ffff.pop('#1 units owned - Freezer  ')
-            
-            third_ffffumn=ffff.pop('#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Freezer')
-            second_ffffumn=ffff.pop('#3 What is the capacity?')
-            
+
+
+            second_ffffumn=ffff.pop('#2 What is the capacity?')
+
             fifth_ffffumn=ffff.pop('Freezer - The estimated Watts consumed per day')
-            
+
             ffff.insert(col28+1, '#1 units owned - Freezer  ', first_ffffumn)
-            
-            ffff.insert(col28+2, '#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Freezer', third_ffffumn)
-            ffff.insert(col28+3, '#3 What is the capacity? - Freezer', second_ffffumn)
-            ffff.insert(col28+4, 'Freezer - The estimated Watts consumed per day', fifth_ffffumn)
+            ffff.insert(col28+2, '#2 What is the capacity? - Freezer', second_ffffumn)
+            ffff.insert(col28+3, 'Freezer - The estimated Watts consumed per day', fifth_ffffumn)
+
             
             #column 29th
             data=[]
             data = df['Refrigerator - ثلاجة'].str.split('\n',expand=True)
-            
+
             refri=ffff.join(data)
             refri['#1 units owned - Refrigerator  ']=(refri[0].str.split('/').str[1])
             refri['#1 units owned - Refrigerator  ']=(refri['#1 units owned - Refrigerator  '].str.split(':').str[1])
-            
-            
-            
-            refri['#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Refrigerator']=(refri[1].str.split('/').str[1])
-            refri['#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Refrigerator']=(refri['#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Refrigerator'].str.split(':').str[1])
-            
-            refri['#3 What is the capacity?']=(refri[2].str.split('/').str[1])
-            refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split(':').str[1])
-            refri['#3 What is the capacity?']=(refri['#3 What is the capacity?'].str.split('(').str[0])
+
+            refri['#2 What is the capacity?']=(refri[1].str.split('/').str[1])
+            refri['#2 What is the capacity?']=(refri['#2 What is the capacity?'].str.split(':').str[1])
+            refri['#2 What is the capacity?']=(refri['#2 What is the capacity?'].str.split('(').str[0])
             import re
-            refri['Refrigerator - The estimated Watts consumed per day'] =pd.to_numeric(refri[4].str.replace('[^\d.]', ''), errors='coerce')
-            
-            refri=refri.drop([0,1,2,3,4], axis=1)
-            
+            refri['Refrigerator - The estimated Watts consumed per day'] =pd.to_numeric(refri[3].str.replace('[^\d.]', ''), errors='coerce')
+
+            refri=refri.drop([0,1,2,3], axis=1)
+
             col29=refri.columns.get_loc('Refrigerator - ثلاجة')
-            
+
             first_refriumn = refri.pop('#1 units owned - Refrigerator  ')
-            
-            third_refriumn=refri.pop('#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Refrigerator')
-            second_refriumn=refri.pop('#3 What is the capacity?')
-            
+
+
+            second_refriumn=refri.pop('#2 What is the capacity?')
+
             fifth_refriumn=refri.pop('Refrigerator - The estimated Watts consumed per day')
-            
+
             refri.insert(col29+1, '#1 units owned - Refrigerator  ', first_refriumn)
-            
-            refri.insert(col29+2, '#2 How many times do you use this appliance in a week? (5 times, 6 times or daily) - Refrigerator', third_refriumn)
-            refri.insert(col29+3, '#3 What is the capacity? - Refrigerator', second_refriumn)
-            refri.insert(col29+4, 'Refrigerator - The estimated Watts consumed per day', fifth_refriumn)
+
+            refri.insert(col29+2, '#3 What is the capacity? - Refrigerator', second_refriumn)
+            refri.insert(col29+3, 'Refrigerator - The estimated Watts consumed per day', fifth_refriumn)
 
             if st.checkbox("click to see the data with new features"):
                 st.write(refri)
@@ -1187,15 +1175,15 @@ the same energy as appliances used for short time periods at high wattage (power
                     st.write("**Spatial comfort equipment estimated watts consumed per day**")
                     
                     spat=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
-'Air Conditioner Central Split  - The estimated Watts consumed per day',
-'Air conditioning Units Mini split  - The estimated Watts consumed per day',
-'Air conditioning Units Windows  - The estimated Watts consumed per day',
-'Portable air cooler for single room - The estimated Watts consumed per day',
-'Air Purifier Device - The estimated Watts consumed per day',
-'Electric fan - The estimated Watts consumed per day',
-'Heater - Central  - The estimated Watts consumed per day',
-'Heater - Space Heater (Portable, Electric)  - The estimated Watts consumed per day',
-'Heater - Space Heater (Portable, Oil)  - The estimated Watts consumed per day']]
+ 'Air Conditioner Central Split  - The estimated Watts consumed per day',
+ 'Air conditioning Units Mini split  - The estimated Watts consumed per day',
+ 'Air conditioning Units Windows  - The estimated Watts consumed per day',
+ 'Portable air cooler for single room - The estimated Watts consumed per day',
+ 'Air Purifier Device - The estimated Watts consumed per day',
+ 'Electric fan - The estimated Watts consumed per day',
+ 'Heater - Central  - The estimated Watts consumed per day',
+ 'Heater - Space Heater (Portable, Electric)  - The estimated Watts consumed per day',
+ 'Heater - Space Heater (Portable, Oil)  - The estimated Watts consumed per day']]
 
                     spat.columns=spat.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_spat=spat.T
@@ -1207,14 +1195,14 @@ the same energy as appliances used for short time periods at high wattage (power
                     
                     st.write("**Cooking Equipment estimated watts consumed per day**")
                     cook=new_data[['Blender/mixer/food processor  - The estimated Watts consumed per day',
-'kettle- The estimated Watts consumed per day',
-'Toaster- The estimated Watts consumed per day',
-'Range - LPG- The estimated Watts consumed per day',
-'Range - Electric- The estimated Watts consumed per day',
-'Cooktop - (LPG/Electric/Induction)- The estimated Watts consumed per day',
-'Oven -(LPG/Electric)- The estimated Watts consumed per day',
-'Air fryer- The estimated Watts consumed per day',
-'Coffee Maker- The estimated Watts consumed per day']]
+ 'kettle- The estimated Watts consumed per day',
+ 'Toaster- The estimated Watts consumed per day',
+ 'Range - LPG- The estimated Watts consumed per day',
+ 'Range - Electric- The estimated Watts consumed per day',
+ 'Cooktop - (LPG/Electric/Induction)- The estimated Watts consumed per day',
+ 'Oven -(LPG/Electric)- The estimated Watts consumed per day',
+ 'Air fryer- The estimated Watts consumed per day',
+ 'Coffee Maker- The estimated Watts consumed per day']]
 
                     cook.columns=cook.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_cook=cook.T
@@ -1226,8 +1214,8 @@ the same energy as appliances used for short time periods at high wattage (power
                     
                     st.write("**Water Equipment estimated watts consumed per day**")
                     wat=new_data[['Water Cooler - The estimated Watts consumed per day',
-'Water Heater - Central - The estimated Watts consumed per day',
-'Water Heater - Normal - The estimated Watts consumed per day',]]
+ 'Water Heater - Central - The estimated Watts consumed per day',
+ 'Water Heater - Normal - The estimated Watts consumed per day']]
 
                     wat.columns=wat.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_wat=wat.T
@@ -1240,12 +1228,12 @@ the same energy as appliances used for short time periods at high wattage (power
                     st.write("**Appliances estimated watts consumed per day**")
                     
                     Applian=new_data[['Clothes dryer - The estimated Watts consumed per day',
-'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
-'Top loaded Clothes washer automatic - The estimated Watts consumed per day',
-'Clothes washer normal - The estimated Watts consumed per day',
-'Dish washer - The estimated Watts consumed per day',
-'Freezer - The estimated Watts consumed per day',
-'Refrigerator - The estimated Watts consumed per day']]
+ 'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
+ 'Top loaded Clothes washer automatic - The estimated Watts consumed per day',
+ 'Clothes washer normal - The estimated Watts consumed per day',
+ 'Dish washer - The estimated Watts consumed per day',
+ 'Freezer - The estimated Watts consumed per day',
+ 'Refrigerator - The estimated Watts consumed per day']
 
                     Applian.columns=Applian.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_Applian=Applian.T
@@ -1264,15 +1252,15 @@ the same energy as appliances used for short time periods at high wattage (power
                 if st.checkbox("Lets check the details for Spatial comfort equipment"):
 
                     spatial=new_data[['Air Conditioner Central Packaged  - The estimated Watts consumed per day',
-'Air Conditioner Central Split  - The estimated Watts consumed per day',
-'Air conditioning Units Mini split  - The estimated Watts consumed per day',
-'Air conditioning Units Windows  - The estimated Watts consumed per day',
-'Portable air cooler for single room - The estimated Watts consumed per day',
-'Air Purifier Device - The estimated Watts consumed per day',
-'Electric fan - The estimated Watts consumed per day',
-'Heater - Central  - The estimated Watts consumed per day',
-'Heater - Space Heater (Portable, Electric)  - The estimated Watts consumed per day',
-'Heater - Space Heater (Portable, Oil)  - The estimated Watts consumed per day']]
+ 'Air Conditioner Central Split  - The estimated Watts consumed per day',
+ 'Air conditioning Units Mini split  - The estimated Watts consumed per day',
+ 'Air conditioning Units Windows  - The estimated Watts consumed per day',
+ 'Portable air cooler for single room - The estimated Watts consumed per day',
+ 'Air Purifier Device - The estimated Watts consumed per day',
+ 'Electric fan - The estimated Watts consumed per day',
+ 'Heater - Central  - The estimated Watts consumed per day',
+ 'Heater - Space Heater (Portable, Electric)  - The estimated Watts consumed per day',
+ 'Heater - Space Heater (Portable, Oil)  - The estimated Watts consumed per day']]
 
                     spatial.columns=spatial.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_spatial=spatial.T
@@ -1343,14 +1331,14 @@ the same energy as appliances used for short time periods at high wattage (power
                 if st.checkbox("Lets check the details for Cooking Equipment"):
 
                     cooking=new_data[['Blender/mixer/food processor  - The estimated Watts consumed per day',
-'kettle- The estimated Watts consumed per day',
-'Toaster- The estimated Watts consumed per day',
-'Range - LPG- The estimated Watts consumed per day',
-'Range - Electric- The estimated Watts consumed per day',
-'Cooktop - (LPG/Electric/Induction)- The estimated Watts consumed per day',
-'Oven -(LPG/Electric)- The estimated Watts consumed per day',
-'Air fryer- The estimated Watts consumed per day',
-'Coffee Maker- The estimated Watts consumed per day']]
+ 'kettle- The estimated Watts consumed per day',
+ 'Toaster- The estimated Watts consumed per day',
+ 'Range - LPG- The estimated Watts consumed per day',
+ 'Range - Electric- The estimated Watts consumed per day',
+ 'Cooktop - (LPG/Electric/Induction)- The estimated Watts consumed per day',
+ 'Oven -(LPG/Electric)- The estimated Watts consumed per day',
+ 'Air fryer- The estimated Watts consumed per day',
+ 'Coffee Maker- The estimated Watts consumed per day']]
 
                     cooking.columns=cooking.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_cooking=cooking.T
@@ -1420,8 +1408,8 @@ the same energy as appliances used for short time periods at high wattage (power
                 if st.checkbox("Lets check the details for water Equipment"):
 
                     water=new_data[['Water Cooler - The estimated Watts consumed per day',
-'Water Heater - Central - The estimated Watts consumed per day',
-'Water Heater - Normal - The estimated Watts consumed per day',]]
+ 'Water Heater - Central - The estimated Watts consumed per day',
+ 'Water Heater - Normal - The estimated Watts consumed per day']]
 
                     water.columns=water.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_water=water.T
@@ -1491,12 +1479,12 @@ the same energy as appliances used for short time periods at high wattage (power
                 if st.checkbox("Lets check the details for Appliances"):
 
                     Appliances=new_data[['Clothes dryer - The estimated Watts consumed per day',
-'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
-'Top loaded Clothes washer automatic - The estimated Watts consumed per day',
-'Clothes washer normal - The estimated Watts consumed per day',
-'Dish washer - The estimated Watts consumed per day',
-'Freezer - The estimated Watts consumed per day',
-'Refrigerator - The estimated Watts consumed per day']]
+ 'Front loaded Clothes washer automatic - The estimated Watts consumed per day',
+ 'Top loaded Clothes washer automatic - The estimated Watts consumed per day',
+ 'Clothes washer normal - The estimated Watts consumed per day',
+ 'Dish washer - The estimated Watts consumed per day',
+ 'Freezer - The estimated Watts consumed per day',
+ 'Refrigerator - The estimated Watts consumed per day']]
 
                     Appliances.columns=Appliances.columns.str.replace('- The estimated Watts consumed per day', ' ')
                     usages_Appliances=Appliances.T
