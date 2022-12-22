@@ -1251,7 +1251,7 @@ the same energy as appliances used for short time periods at high wattage (power
                      
                      st.subheader("2. Cooking Equipment")
                      st.markdown("**Cooking equipment estimated watts consumed per day for demographic {} and criteria {}**".format(selected_columns,selected_row))
-                     usacom_cook = usacom_cook.fillna(0)
+                     usacom_cook = usacom_cook.replace(np.nan, 0)
                      import plotly.express as px
                      st.markdown("**Average and Total Estimated watts for Cooking equipment estimated watts consumed per day for demographic {} and criteria {}**".format(selected_columns,selected_row))
                      fig35 = px.bar(usacom_cook, x="Appliances", y="Total estimated watts",color="Average estimated watts",width=900, height=600)        
