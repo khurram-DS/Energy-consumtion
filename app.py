@@ -1221,12 +1221,17 @@ the same energy as appliances used for short time periods at high wattage (power
                      usages_cmpcolrow=usages_cmpcolrow.reset_index()
                      usages_cmpcolrow.rename( columns={0:'Average Usages in Watts / day','index':'Appliances'}, inplace=True)
                      usacom_spat=usages_cmpcolrow.iloc[:10]
+                     usacom_spat = usacom_spat.fillna(0)
                      usacom_cook=usages_cmpcolrow.iloc[10:19]
                      usacom_cook=usacom_cook.reset_index(drop=True)
+                     usacom_cook = usacom_cook.fillna(0)
                      usacom_water=usages_cmpcolrow.iloc[19:22]
                      usacom_water=usacom_water.reset_index(drop=True)
+                     usacom_water = usacom_water.fillna(0)
+                    
                      usacom_applian=usages_cmpcolrow.iloc[22:29]
                      usacom_applian=usacom_applian.reset_index(drop=True)
+                     usacom_applian=usacom_applian.fillna(0)
                      st.subheader("1. Spatial Comfort Equipment")
                      st.markdown("**Spatial comfort equipment estimated watts consumed per day for demographic {} and criteria {}**".format(selected_columns,selected_row))
                      st.write(usacom_spat)
@@ -1251,7 +1256,8 @@ the same energy as appliances used for short time periods at high wattage (power
                      
                      st.subheader("2. Cooking Equipment")
                      st.markdown("**Cooking equipment estimated watts consumed per day for demographic {} and criteria {}**".format(selected_columns,selected_row))
-                     usacom_cook = usacom_cook.fillna(0)
+                     st.write(usacom_cook)
+                    
                      import plotly.express as px
                      st.markdown("**Average and Total Estimated watts for Cooking equipment estimated watts consumed per day for demographic {} and criteria {}**".format(selected_columns,selected_row))
                      fig35 = px.bar(usacom_cook, x="Appliances", y="Total estimated watts",color="Average estimated watts",width=900, height=600)        
