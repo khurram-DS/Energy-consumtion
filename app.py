@@ -1302,6 +1302,7 @@ the same energy as appliances used for short time periods at high wattage (power
                      st.write(fig39)
                      
                      st.markdown("**Minimum And Maximum Estimated watts for Other Appliances equipment estimated watts consumed per day for demographic {} and criteria {}**".format(selected_columns,selected_row))
+                     st.write(usacom_applian)
                      fig40 = px.bar(usacom_applian, x="Appliances", y="Maximum estimated watts",color="Minimum estimated watts",width=900, height=600)        
                      st.write(fig40)
                      
@@ -1310,9 +1311,9 @@ the same energy as appliances used for short time periods at high wattage (power
                      data_comsapplian= pd.DataFrame({'minimum': [usages_cmpcolrow['Total estimated watts'].min()],'Mean': [usages_cmpcolrow['Total estimated watts'].mean()],'Maximum': [usages_cmpcolrow['Total estimated watts'].max()]})
                      data_comsapplian=data_comsapplian.T
                      data_comsapplian=data_comsapplian.reset_index()
-                     st.write(data_comsapplian)
+                     
                      data_comsapplian.rename( columns={0:'Usages in Watts / day','index':'Statistics'}, inplace=True)
-                     st.write(data_comsapplian)
+                     
                      fig41 = px.bar(data_comsapplian, x="Statistics", y="Usages in Watts / day",width=700, height=500)
                      st.write(fig41)
 
