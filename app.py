@@ -1310,6 +1310,7 @@ the same energy as appliances used for short time periods at high wattage (power
                      data_comsapplian= pd.DataFrame({'minimum': [usages_cmpcolrow['Total estimated watts'].min()],'Mean': [usages_cmpcolrow['Total estimated watts'].mean()],'Maximum': [usages_cmpcolrow['Total estimated watts'].max()]})
                      data_comsapplian=data_comsapplian.T
                      data_comsapplian=data_comsapplian.reset_index()
+                     st.write(data_comsapplian)
                      data_comsapplian.rename( columns={0:'Usages in Watts / day','index':'Statistics'}, inplace=True)
                      st.write(data_comsapplian)
                      fig41 = px.bar(data_comsapplian, x="Statistics", y="Usages in Watts / day",width=700, height=500)
