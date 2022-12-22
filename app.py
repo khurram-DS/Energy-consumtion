@@ -1311,7 +1311,7 @@ the same energy as appliances used for short time periods at high wattage (power
                      data_comsapplian=data_comsapplian.T
                      data_comsapplian=data_comsapplian.reset_index()
                      data_comsapplian.rename( columns={0:'Usages in Watts / day','index':'Statistics'}, inplace=True)
-                     
+                     st.write(data_comsapplian)
                      fig41 = px.bar(data_comsapplian, x="Statistics", y="Usages in Watts / day",width=700, height=500)
                      st.write(fig41)
 
