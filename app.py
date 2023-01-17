@@ -9639,7 +9639,7 @@ the same energy as appliances used for short time periods at high wattage (power
                     st.write(fig21)
                     st.write(fig22)
                 #watts final
-                st.markdown("**The Watts consumed (Miscellaneous equipment)**")
+                st.markdown("**Watts consumed (Miscellaneous equipment)**")
                 if st.checkbox("Table 40. Descriptive Statistics- Watts consumed (Miscellaneous equipment)"):
 
 
