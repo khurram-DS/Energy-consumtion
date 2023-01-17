@@ -1334,8 +1334,10 @@ the same energy as appliances used for short time periods at high wattage (power
                 
             if st.checkbox("Table 1: Demographic variables"):
                 st.markdown("**Age group**")
+                age = age.loc[['Less than 26 years old', 'From 26 to 35 years old', 'From 36 to 45 years old', 'From 46 to 55 years old', 'From 56 to 65 year old', 'More than 65 years old'], :]
                 st.table(data=age)
                 st.markdown("**Family Size**")
+                family = family.loc[['Less than 3 persons', 'From 3 to 5 people', 'From 6 to 8 people', 'From 9 to 11 people', 'More than 11 people'], :]
                 st.table(data=family)
                 st.markdown("**Educational qualification**")
                 st.table(data=Education)
@@ -1344,6 +1346,7 @@ the same energy as appliances used for short time periods at high wattage (power
                 st.markdown("**Governorate**")
                 st.table(data=goveranate)
                 st.markdown("**Household income**")
+                income = income.loc[['Less than or equal to 1000 KD', 'From 1001 to 2000 KD', 'From 2001 to 3000 KD', 'From 3001 to 4000 KD', 'From 4001 to 5000 KD', 'More than 5000 KD'], :]
                 st.table(data=income)
                 st.markdown("**Type of housing unit**")
                 st.table(data=typ)
